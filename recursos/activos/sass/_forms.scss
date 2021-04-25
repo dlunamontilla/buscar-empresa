@@ -1,0 +1,112 @@
+.form {
+    display: flex;
+
+    --height: 70px;
+    --height-button: calc(var(--height) / 2);
+
+    &__text {
+        background-color: transparent;
+        font: inherit;
+        border: 1px solid rgba(white, 0.2);
+        padding: 0 10px;
+        outline: medium none;
+        color: rgba(white, 0.8);
+
+        display: block;
+        position: absolute;
+        margin: auto;
+        left: 0; right: 0;
+        top: auto; bottom: 0;
+        width: 100%;
+        height: var(--height-button);
+    }
+
+    &__label {
+        position: relative;
+        min-width: 220px;
+        height: var(--height);
+    }
+
+    &__caption {
+        display: block;
+        position: absolute;
+        margin: auto;
+        left: 0; right: 0;
+
+        bottom: calc(var(--height-button) + 5px);
+    }
+
+    &__button {
+        position: absolute;
+        margin: auto;
+        bottom: 0;
+    }
+}
+
+.group-buttons {
+    position: relative;
+    height: var(--height);
+    min-width: 170px;
+}
+
+.btn {
+    --fondo: #{$color-base};
+    --apariencia: button;
+    --radio: 0 calc(var(--height) / 2) calc(var(--height) / 2) 0;
+
+    -webkit-appearance: var(--apariencia);
+    -moz-appearance: var(--apariencia);
+    appearance: var(--apariencia);
+    
+    border: 0;
+    background-color: var(--fondo);
+    background-image: none;
+    color: white;
+    height: calc(var(--height) / 2);
+    border-radius: var(--radio);
+    font-size: 90%;
+    transition: 300ms ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-right: 15px;
+    outline: medium none;
+
+    &:active {
+        transition: none;
+    }
+
+    &--success {
+        $color: #008000;
+        
+        --fondo:#{$color};
+
+        &:hover {
+            --fondo: #{darken($color, 5)};
+        }
+
+        &:focus {
+            opacity: 0.85;
+        }
+
+        &:active {
+            --fondo: #{$color};
+        }
+    }
+}
+
+// Iconos
+.icon {
+    height: var(--size);
+    width: var(--size);
+
+    fill: white;
+
+    &--small {
+        --size: 20px;
+    }
+
+    &__path {
+        fill: white;
+    }
+}

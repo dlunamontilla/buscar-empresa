@@ -1,47 +1,55 @@
 <!DOCTYPE html>
-<html lang="es-VE" prefix="og: https://ogp.me/ns#">
+<html lang="es-VE">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buscar empresas</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar empresa</title>
 
-    <!-- Protocolo OpenGraph -->
-    <meta property="og:title" content="Buscar empresas" />
-    <meta property="og:type" content="website" />
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="multimedia/favicon/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="multimedia/favicon/favicon.png" type="image/png" />
-
-    <!-- Fuentes tipográficas -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">  -->
-
-    <!-- Bootstrap CDN CSS -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
-
-
-    <!-- Estilos -->
-    <link rel="stylesheet" href="vista/css/style.css" />
-
-    <!-- jQuery -->
-    <!--
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-	-->
-
-    <!-- JS, Popper.js, and jQuery -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>-->
-
-    <!-- JavaScript -->
-    <script src="app/js/main.js" defer></script>
+    <link href="vista/css/style.css" rel="stylesheet">
 </head>
 
 <body>
+    <template id="plantilla">
+        <div class="caja giro-constante size">
+            <svg class="lienzo giro-intervalo" viewBox="0 0 140 140">
+                <circle class="cir cir--fijo" cx="70" cy="70" r="65"></circle>
+                <circle class="cir cir--completando giro-trazo" cx="70" cy="70" r="65"></circle>
+            </svg>
+        </div>
+    </template>
+
     <main id="app">
-        <!-- Escriba a aquí su código -->
+        <form class="form" id="form-busqueda" action="api/" method="post">
+            <label class="form__label">
+                <span class="form__caption">Search bussiness:</span>
+                <input class="form__text" id="empresa" name="empresa" type="text" placeholder="Enter a bussiness" required="" pattern="[a-zA-Z]+">
+            </label>
+
+            <div class="group-buttons">
+                <button class="btn btn--success form__button" id="btn-enviar" type="submit">
+                    <svg viewBox="0 0 170.63589 178.25357" class="icon icon--small" aria-label="Search">
+                        <g transform="translate(-22.407312,-83.39003)">
+                            <path
+                                class="icon__path"
+                                d="m 48.819936,113.61149 c -20.941946,20.94195 -20.941583,55.1772 3.64e-4,76.11915 17.716697,17.71669 44.946436,20.4433 65.59358,8.18367 l 4.6702,-0.58165 15.26058,15.26058 -0.26133,4.99052 25.6579,25.65789 c 5.18235,5.18236 13.52651,5.18236 18.70886,0 5.18236,-5.18236 5.18236,-13.52651 0,-18.70887 l -25.65789,-25.65789 -4.99052,0.26133 -15.26058,-15.26058 0.58165,-4.6702 c 12.25963,-20.64714 9.53302,-47.87688 -8.18367,-65.59358 -20.94195,-20.941951 -55.1772,-20.942314 -76.119144,-3.7e-4 z m 13.096938,13.09694 c 13.86423,-13.86423 36.061401,-13.86423 49.925626,0 13.86423,13.86423 13.86424,36.06141 1e-5,49.92564 -13.864232,13.86423 -36.061408,13.86423 -49.925638,0 -13.864232,-13.86424 -13.864228,-36.06141 2e-6,-49.92564 z"
+                                id="path14" inkscape:connector-curvature="0"
+                                sodipodi:nodetypes="ssccccsssccccsssssss" />
+                        </g>
+                    </svg>
+
+                    <span>Search</span>
+                </button>
+            </div>
+        </form>
+
+        <hr>
+
+        <div class="table-container" id="tabla"></div>
     </main>
+
+    <script src="app/js/main.js" type="module"></script>
 </body>
 
 </html>

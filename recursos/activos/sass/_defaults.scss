@@ -18,14 +18,14 @@ $min-height: 100vh !default;
 
 :root {
   font-family: 'Roboto', sans-serif;
+
+  background-color:darken($color-base, 30);
+  color: white;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-
-  color: #606060;
-  background-color: lighten($color-base, 65);
 }
 
 body {
@@ -77,7 +77,7 @@ a {
 hr {
   margin: 20px auto 30px;
   border: 0;
-  border-bottom: 1px solid lighten($color-base, 30);
+  border-bottom: 1px solid rgba(white, 0.2);
 }
 
 // pre y code

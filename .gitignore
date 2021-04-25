@@ -1,7 +1,9 @@
 Herramientas
-*/*.md
 .sass-cache
 .vscode
 *.sql
 upload
 uploads
+config.php
+
+*/api/config.php

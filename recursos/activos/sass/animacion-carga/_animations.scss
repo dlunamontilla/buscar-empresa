@@ -1,0 +1,71 @@
+// ANIMACIÓN DE LA CIRCUNFERENCIA:
+@keyframes giro-trazo {
+    50% {
+        stroke-dashoffset: 440;
+    }
+}
+
+/* Giro en intervalo. Se aplicará en el lienzo */
+@keyframes giro-intervalo {
+    0% {
+        transform: rotateZ(-449deg);
+    }
+
+    50%,
+    100% {
+        transform: rotateZ(-90deg);
+    }
+}
+
+/* Animación para giro constante de 360 grados */
+@keyframes giro-constante {
+    from {
+        transform: rotateZ(-359deg);
+    }
+}
+
+:root {
+    --color: white;
+    --diametro: 100px;
+}
+/* Propiedades comunes del lienzo y la caja */
+.size {
+    --diametro: 20px;
+
+    width: var(--diametro);
+    height: var(--diametro);
+}
+
+/* Lienzo donde se ubica la circunferencia */
+.lienzo {
+    transform: rotateZ(-90deg);
+}
+
+.cir {
+    fill: none;
+
+    // Circunferencia con el borde animado:
+    &--completando {
+        stroke: var(--color);
+        stroke-width: 10;
+
+        /* Matriz de guiones */
+        stroke-dasharray: 440;
+        stroke-dashoffset: 80;
+    }
+}
+
+// Anmación del trazo de la circunferencia:
+.giro {
+    &-trazo {
+        animation: 2.5s ease giro-trazo infinite;
+    }
+
+    &-intervalo {
+        animation: 2.5s ease giro-intervalo infinite;
+    }
+
+    &-constante {
+        animation: 2s linear giro-constante infinite;
+    }
+}
