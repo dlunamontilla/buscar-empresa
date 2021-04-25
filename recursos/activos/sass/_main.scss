@@ -55,4 +55,18 @@ main {
             background-color: rgba(white, 0.03);
         }
     }
+
+    &__success {
+        background-color: #004000;
+        color: rgba(white, 0.7);
+        font-size: 1.2rem;
+        
+        strong {
+            font-size: 100%;
+        }
+
+        td {
+            padding: 15px;
+        }
+    }
 }

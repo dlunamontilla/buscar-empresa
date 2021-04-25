@@ -105,6 +105,17 @@ main {
 .enterprise-table__item:nth-of-type(2n) {
   background-color: rgba(255, 255, 255, 0.03);
 }
+.enterprise-table__success {
+  background-color: #004000;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+}
+.enterprise-table__success strong {
+  font-size: 100%;
+}
+.enterprise-table__success td {
+  padding: 15px;
+}
 
 .form {
   display: flex;
