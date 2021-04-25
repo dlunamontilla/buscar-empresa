@@ -119,8 +119,7 @@ const pintarTabla = (busqueda) => {
 
                     let postalCode = enterprise.address.postal_code ? enterprise.address.postal_code : "";
                     let locality = enterprise.address.locality ? enterprise.address.locality : "";
-                    let company = enterprise.address.company_status ? enterprise.address.company_status : "";
-
+                    let status = enterprise.company_status ? enterprise.company_status : "";
 
                     // Creación de registro a partir de los datos devueltos por la API:
                     registro += `
@@ -135,7 +134,7 @@ const pintarTabla = (busqueda) => {
 
                             <td>${postalCode}</td>
                             <td>${locality}</td>
-                            <td>${company}</td>
+                            <td>${status}</td>
                         </tr>
                     `;
                 });
